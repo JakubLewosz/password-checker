@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weryfikacja Siły Hasła</title>
+    <!-- Ikony Phosphor dla responsywnego, nowczesnego UI -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Nowoczesna typografia od Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="card">
+            <div class="card-header">
+                <div class="icon-wrapper">
+                    <i class="ph-fill ph-shield-check"></i>
+                </div>
+                <h2>Kreator Silnego Hasła</h2>
+                <p>Wpisz i zatwierdź hasło, by algorytm obliczył jego całkowitą siłę według wytycznych.</p>
+            </div>
+
+            <form id="password-form">
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class="ph ph-password input-icon"></i>
+                        <input type="password" id="password-input" placeholder="Wprowadź bezpieczne hasło" autocomplete="off">
+                        <button type="button" id="toggle-password" class="toggle-btn" aria-label="Pokaż hasło">
+                            <i class="ph ph-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="requirements-box">
+                    <h3>Wymagania:</h3>
+                    <ul class="req-list">
+                        <li id="req-length" class="req-item">
+                            <i class="ph ph-circle"></i>
+                            <span>Od 8 do 20 znaków</span>
+                        </li>
+                        <li id="req-lower" class="req-item">
+                            <i class="ph ph-circle"></i>
+                            <span>Mała litera (a-z)</span>
+                        </li>
+                        <li id="req-upper" class="req-item">
+                            <i class="ph ph-circle"></i>
+                            <span>Duża litera (A-Z)</span>
+                        </li>
+                        <li id="req-number" class="req-item">
+                            <i class="ph ph-circle"></i>
+                            <span>Przynajmniej 1 liczba (0-9)</span>
+                        </li>
+                        <li id="req-special" class="req-item">
+                            <i class="ph ph-circle"></i>
+                            <span>Znak specjalny (np. !@#$)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <button type="submit" id="submit-btn" class="btn-primary">
+                    Autoryzuj hasło <i class="ph ph-arrow-right"></i>
+                </button>
+            </form>
+
+            <div id="strength-container" class="strength-container">
+                <div class="strength-header">
+                    <span id="strength-text" class="strength-text">Siła hasła: --</span>
+                </div>
+                <div class="strength-bar-bg">
+                    <div id="strength-bar" class="strength-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
